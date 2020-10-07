@@ -1,0 +1,94 @@
+
+\documentclass[oneside,a4paper,12pt]{article}  % velkost strany A4, velkost pisma, typ formatovania pre clanok/article
+
+\usepackage[utf8]{inputenc}  % prikaz inputenc zadefinuje balicek pre kodovanie utf8 kvoli makcenom a dlznom
+
+\usepackage[slovak]{babel}  % definuje balicek na generovanie textu v slovencine
+
+\usepackage{amsmath}  % matematicke funkcie
+
+\usepackage{graphicx}  % praca s obrazkami
+
+
+
+% vytvorenie titulnej strany
+
+\title  {\ Nazov temy}  % nazov  
+\date {28-09-2020}  % datum (bez specifikovania generuje aktualny datum)
+
+\author{Meno Priezvisko\\[2pt]   % meno autora
+                    {\small Slovenska technicka univerzita Bratislave}\\
+                    {\small Fakulta informatiky a informacnych technologii}\\
+                    {\small \texttt{...@stuba.sk}}
+            }
+
+
+% zaciatok dokumentu
+
+\begin{document} 
+
+          \pagenumbering{gobble}  % necisluj prvu stranu
+          \maketitle  % vytvor titulnu stranu
+          \newpage  %vloz novu stranu
+          \pagenumbering{arabic}  % pouzivaj arabske cislice
+                            
+ 
+ % vytvorenie sekcie, cislovanie je automaticke                           
+\section{Kapitola}
+
+          \begin{align*}  % zaciatok bloku matematicych operacii
+                    1 + 2 &= 3\\   % \\ - dalsia operacia bude na novej strane 
+                    1 &= 3 - 2                
+          \end{align*}  % koniec bloku matematickych operacii
+
+
+% vytvorenie podsekcie
+\subsection{Podkapitola}
+
+          \begin{align*}
+                    f(x) &= x^2\\
+                    g(x) &= \frac{1}{x}\\
+                    F(x) &= \int^a_b \frac{1}{3}x^3
+          \end{align*}
+
+
+% vytvorenie podpodsekcie
+\subsubsection{Podpodkapitola}
+
+          \begin{figure}[htbp]  % oznacuje pracu s obrazkami, h/t/b/p hovoria o polohe obrazka v ramci textu
+
+                    \centering  % zarovna obrazok na stred
+                    \includegraphics[scale=0.20]{Nazov obrazka}  % scale hovori kolkokrat ma byt obrazok vacsi/mensi oproti povodnemu, meno obrazka - obr ma byt ulozeny v rovnakom priecinku
+                    \caption{Nas prvy obrazok}  % oznacenie obrazka - popis 
+
+          \end{figure}  % koniec bloku s obrazkami
+
+
+
+Text
+  
+
+\begin{table}[h!]  % praca s tabulkami, h zarovnava tabulku za vetu, za ktorou sa nachadza dany prikaz
+
+          \begin{center}
+
+                    \label{tab:Tabulka 1}  % oznacenie tabulky
+    
+                    \begin{tabular}{l|c|r}  % vykreslenie stlpcov, prvy vlavo, druhy uprostred, treti vpravo
+                              \textbf{Hodnota 1} & \textbf{Hodnota 2} & \textbf{Hodnota 3}\\   % zadanie textu, dalsi text bude na novom riadku, vypis cez \text, bf oznacuje hrubku pisma
+                              $\alpha$ & $\beta$ & $\gamma$ \\   % dalsi text 
+                              
+                              \hline  % vykresli ciaru oddelujucu hlavicu od ostatneho textu
+                              1 & 1110.1 & a\\  % vypln tabulky
+                              2 & 10.1 & b\\
+                              3 & 23.113231 & c\\
+               
+                    \end{tabular}  % koniec bloku s tabulkami
+    
+          \end{center} % ukoncnie zarovnania na stred
+                    
+          \caption{Nasa prva tabulka}  % pomenovanie tabulky
+     
+\end{table}  % koniec bloku s tabulkou
+
+\end{document}  % koniec dokumentu
